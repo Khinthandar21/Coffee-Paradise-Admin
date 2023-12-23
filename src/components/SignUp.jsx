@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../styles/SignUp.module.css";
 
 function SignUp() {
@@ -8,7 +8,6 @@ function SignUp() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,11 +20,11 @@ function SignUp() {
     setFormErrors(errors);
 
     if (Object.keys(errors).length === 0) {
-      success();
-      setIsSubmit(true);
-      navigate("/login");
+      console.log("No errors");
+      success(); // Call success if there are no errors
+      setIsSubmit(true); // Set isSubmit to true when there are no errors
     } else {
-      setIsSubmit(false);
+      setIsSubmit(false); // Set isSubmit to false if there are errors
     }
   };
 
@@ -129,45 +128,4 @@ function SignUp() {
     </div>
   );
 }
-
-//   const success = () => {
-//     if (Object.keys(formErrors).length === 0 && isSubmit) {
-//       // Create a new user object with an incremental ID
-//       const newUser = {
-//         id: SignUpData.length + 1,
-//         username: formValues.username,
-//         email: formValues.email,
-//         password: formValues.password,
-//       };
-
-//       // Update SignUpData by adding the new user
-
-//       //   SignUpData.push(newUser);
-//       //   const temp = JSON.stringify(newUser);
-//       //   localStorage.setItem("SignUpData", temp);
-//       const updatedSignUpData = [...SignUpData, newUser]; // New array with added user
-//       const temp = JSON.stringify(updatedSignUpData);
-//       localStorage.setItem("SignUpData", temp);
-
-//       console.log("SignUpData after adding new user:", updatedSignUpData);
-//     }
-//     // {
-//     //   SignUpData.filter((item) => {
-//     //     return;
-//     //     item.n;
-//     //     //   search.toLowerCase() === ""
-//     //     //     ? item
-//     //     //     : item.name.toLowerCase().includes(search);
-//     //   });
-//     // }
-//   };
-
-// {Object.keys(formErrors).length === 0 && isSubmit ? (
-//     <div className="ui message success">
-//       Signed in successfully
-//       {/* {success()} */}
-//     </div>
-//   ) : (
-//     <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-//   )}
 export default SignUp;
