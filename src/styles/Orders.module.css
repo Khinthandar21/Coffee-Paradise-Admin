@@ -1,0 +1,42 @@
+.container {
+  margin: 20px 0px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.emptyCart {
+  font-size: 18px;
+  color: #555;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tbody td {
+  padding: 8px;
+}
+
+.totalAmount {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: brown;
+  text-align: center;
+}
